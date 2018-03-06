@@ -1,0 +1,28 @@
+{
+  "name": "wdio_examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "''",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "TELOTA, Luisa Philipp",
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^2.35.0",
+    "selenium-standalone": "^6.6.0",
+    "webdriverio": "^4.11.0"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "wdio-chromedriver-service": "^0.1.2",
+    "wdio-mocha-framework": "^0.5.12",
+    "wdio-phantomjs-service": "^0.2.2",
+    "wdio-selenium-standalone-service": "0.0.9"
+  },
+  "ava" : {
+    "files" : [
+      "test/*.js"
+    ]
+  }
+}
