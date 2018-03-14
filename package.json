@@ -4,7 +4,8 @@
   "description": "",
   "main": "''",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "wdio": "wdio wdio.conf.js"
   },
   "author": "TELOTA, Luisa Philipp",
   "license": "MIT",
@@ -15,13 +16,16 @@
   },
   "devDependencies": {
     "ava": "^0.20.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
     "wdio-chromedriver-service": "^0.1.2",
     "wdio-mocha-framework": "^0.5.12",
     "wdio-phantomjs-service": "^0.2.2",
     "wdio-selenium-standalone-service": "0.0.9"
   },
-  "ava" : {
-    "files" : [
+  "ava": {
+    "files": [
       "test/*.js"
     ]
   }

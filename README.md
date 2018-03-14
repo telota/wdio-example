@@ -15,7 +15,7 @@ One test: *wdio_testrunner.js* for usage of the testrunner with configuration fi
 #### Standalone
 * Start Selenium Standalone Server
 * Start Chrome-Driver
-* run ```npm test```
+* run `yarn test` or `npm test`
 
 #### Testrunner
-* run ```node_modules/.bin/wdio wdio.conf.js```
+* run `yarn wdio`
