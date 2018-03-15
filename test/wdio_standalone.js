@@ -20,7 +20,7 @@ chromedriver.start(args);
 const options = {
   port,
   desiredCapabilities: {
-    browserName: 'chrome'
+    browserName: browser
   }  
 };
 

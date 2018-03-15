@@ -7,7 +7,7 @@
     "test": "ava",
     "wdio": "wdio wdio.conf.js"
   },
-  "author": "TELOTA, Luisa Philipp",
+  "author": "TELOTA (Luisa Philipp, Oliver Pohl)",
   "license": "MIT",
   "dependencies": {
     "chromedriver": "^2.35.0",
