@@ -17,6 +17,21 @@ describe('Wilhelm von Humboldt', () => {
   });
 });
 
+describe('Alexander von Humboldt auf Reisen', () => {
+  it('should have Reisetagebücher in the navbar', () => {
+    browser.url('http://edition-humboldt.de/index.xql');
+    assert.equal(browser.element('nav a:nth-child(1)').getText(), 'Reisetagebücher');
+  });
+
+  it('should lead to the Reisetagebücher page when clicked in the navbar', () => {
+    browser
+      .url('http://edition-humboldt.de/index.xql')
+      .element('nav a:nth-child(1)')
+      .click();
+
+    assert.equal(browser.getUrl(), 'http://edition-humboldt.de/reisetagebuecher/index.xql');
+  });
+});
 
 // Testing if search field gives suggestions after input
 describe('Google search', () => {
