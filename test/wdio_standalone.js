@@ -34,7 +34,7 @@ const client = webdriverio
   .remote(options)
   // if an error occurs, print it to the console
   .on('error', e => console.error(e))
-  // if "end"- action is called: stop the chromedriver (only needed it chrome is the testing browser)
+  // if "end"- action is called: stop the chromedriver
   .once('end', () => {
     chromedriver.stop();
   });
@@ -53,11 +53,11 @@ test.after.always(async (t) => {
 });
 
 // testing if loaded up page (google.de) has a title object
-test('has a title', t => client.isExisting('title').then((result) => {
+test('it has a title', t => client.isExisting('title').then((result) => {
   t.true(result);
 }));
 
 // testing if loaded up page (google.de) has the correct title
-test('has the right title', t => client.getTitle().then((result) => {
+test('it has the correct title', t => client.getTitle().then((result) => {
   t.is(result, 'Google');
 }));

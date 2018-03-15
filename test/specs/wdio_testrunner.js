@@ -6,9 +6,9 @@
 const assert = require('assert');
 
 // Displays correct title on page
-describe('load wvh page', () => {
-  it('should have the right title', () => {
-    // open wvh webpage
+describe('Wilhelm von Humboldt', () => {
+  it('should have the correct title', () => {
+    // go to webpage
     browser.url('https://wvh-briefe.bbaw.de/');
     // get the displayed title
     const title = browser.getTitle();
@@ -23,14 +23,18 @@ describe('Google search', () => {
   it('should give suggestions for searching', () => {
     // open google.de
     browser.url('http://google.de');
+
     // check if certain element in browser is visible
     // (element in google.de for displaying the research-suggestions)
     // - shouldn't be visible at this point
     const searchSuggestionBeforeInput = browser.isVisible('.gstl_0.sbdd_a');
+
     // Write "hal" in the search field
     browser.setValue('#lst-ib', 'hal');
+
     // wait for 100 ms
     browser.pause(100);
+
     // check if certain element in browser is visible
     // (element in google.de for displaying the research-suggestions)
     // - should be visible at this point

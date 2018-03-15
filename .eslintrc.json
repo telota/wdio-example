@@ -5,10 +5,14 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "mocha": true
+    },
+    "globals": {
+        "browser": true
     },
     "rules" : {
         "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["t"] }],
-        "no-unused-vars": ["t"]
+        "no-unused-vars": ["error", { "args": "none" }]
       }
 }
