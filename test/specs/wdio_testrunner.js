@@ -3,30 +3,40 @@
  * Testing-Framework: mocha
  * Testing-Browser: dependent on configurations in wdio.conf.js
  */
+const assert = require('assert');
 
-var assert = require('assert');
-//Displays correct title on page
-describe('load wvh page', function() {
-    it('should have the right title', function () {
-        browser.url('https://wvh-briefe.bbaw.de/');
-        var title = browser.getTitle();
-        assert.equal(title, 'Wilhelm von Humboldt: Sprachwissenschaftliche Korrespondenz');
-    });
+// Displays correct title on page
+describe('load wvh page', () => {
+  it('should have the right title', () => {
+    // open wvh webpage
+    browser.url('https://wvh-briefe.bbaw.de/');
+    // get the displayed title
+    const title = browser.getTitle();
+    // check if the displayed title is the desired title
+    assert.equal(title, 'Wilhelm von Humboldt: Sprachwissenschaftliche Korrespondenz');
+  });
 });
 
 
-//Testing if search field gives suggestions after input
-describe('Google search', function() {
-    it('should give suggestions for searching', function () {
-        browser.url('http://google.de');
-        const searchSuggestionBeforeInput = browser.isVisible(".gstl_0.sbdd_a");
-        browser.setValue('#lst-ib', "hal");
-        browser.pause(100);
-        const searchSuggestionAfterInput = browser.isVisible(".gstl_0.sbdd_a");
-        assert.equal(searchSuggestionBeforeInput, false);
-        assert.equal(searchSuggestionAfterInput, true);
-    });
+// Testing if search field gives suggestions after input
+describe('Google search', () => {
+  it('should give suggestions for searching', () => {
+    // open google.de
+    browser.url('http://google.de');
+    // check if certain element in browser is visible
+    // (element in google.de for displaying the research-suggestions)
+    // - shouldn't be visible at this point
+    const searchSuggestionBeforeInput = browser.isVisible('.gstl_0.sbdd_a');
+    // Write "hal" in the search field
+    browser.setValue('#lst-ib', 'hal');
+    // wait for 100 ms
+    browser.pause(100);
+    // check if certain element in browser is visible
+    // (element in google.de for displaying the research-suggestions)
+    // - should be visible at this point
+    const searchSuggestionAfterInput = browser.isVisible('.gstl_0.sbdd_a');
+    assert.equal(searchSuggestionBeforeInput, false);
+    assert.equal(searchSuggestionAfterInput, true);
+  });
 });
-
-
 
